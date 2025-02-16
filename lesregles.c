@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lesregles.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahmed <ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 21:22:00 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/14 06:45:30 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/16 02:45:35 by ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,32 +82,6 @@ void rr_ra_rb_meme_temp(t_var *head)
     write(1,"rr\n",3);
     }
 
-}
-
-
-
-
-
-void rra_rrb(t_stack ** head,char flag)
-{
-    t_stack *con;
-    t_stack *temp;
-    con = *head;
-    temp =*head;
-    int size;
-    size =size_list(*head);
-    if(*head ==NULL || size < 2)
-        return ;
-    while(con->next->next !=NULL)
-        con=con->next;
-    temp= con->next;
-    con->next=NULL;
-    temp->next=*head;
-    *head=temp;
-     if (flag == 'a')
-		write(1, "rra\n", 4);
-	else if (flag == 'b')
-		write(1, "rrb\n", 4);
 }
 
 void rrr_rra_rrb_meme_temp(t_var *head)
