@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 04:10:58 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 04:18:31 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/17 23:54:55 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,23 +81,23 @@ int	size_list(t_stack *heed)
 	return (result);
 }
 
-void rra_rrb(t_stack ** head,char flag)
+void	rra_rrb(t_stack **head, char flag)
 {
-    t_stack *con;
-    t_stack *temp;
-    con = *head;
-    temp =*head;
-    int size;
-    size =size_list(*head);
-    if(*head ==NULL || size < 2)
-        return ;
-    while(con->next->next !=NULL)
-        con=con->next;
-    temp= con->next;
-    con->next=NULL;
-    temp->next=*head;
-    *head=temp;
-     if (flag == 'a')
+	t_stack *con;
+	t_stack *temp;
+	con = *head;
+	temp = *head;
+	int size;
+	size = size_list(*head);
+	if (*head == NULL || size < 2)
+		return ;
+	while (con->next->next != NULL)
+		con = con->next;
+	temp = con->next;
+	con->next = NULL;
+	temp->next = *head;
+	*head = temp;
+	if (flag == 'a')
 		write(1, "rra\n", 4);
 	else if (flag == 'b')
 		write(1, "rrb\n", 4);

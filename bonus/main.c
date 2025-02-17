@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 01:45:56 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 22:35:36 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/17 23:48:04 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	affiche_list(t_stack *contor)
 		contor = contor->next;
 	}
 }
-void	add_to_stack(t_var *var, int max_number, int *stok_maxxx)
+void	add_to_stackk(t_var *var, int max_number, int *stok_maxxx)
 {
 	int	i;
 	int	max[max_number];
@@ -96,12 +96,13 @@ void	add_to_stack(t_var *var, int max_number, int *stok_maxxx)
 		max[i] = stok_maxxx[i];
 		i++;
 	}
+	(void)max;
 }
-void	*test(t_var *var, int max_number, int *stok_maxxx, char *data)
+void	test(t_var *var, int max_number, int *stok_maxxx, char *data)
 {
 	char	*moovm;
 
-	add_to_stack(var, max_number, stok_maxxx);
+	add_to_stackk(var, max_number, stok_maxxx);
 	moovm = get_next_line(0);
 	while (moovm)
 	{

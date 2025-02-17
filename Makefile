@@ -2,7 +2,7 @@ NAME = push_swapA
 BONUS = checker
 
 CC = cc -g3
-# CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3
+ CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
 
 PUSH_SRC = ./mandatory/add_stack.c \
  			./mandatory/lesregles.c \

@@ -6,53 +6,50 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:23:05 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 03:48:13 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/17 22:43:23 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cheker.h"
 
-
-char * cont_chekk_pas_string(char *str,int *cheker,int i)
+char	*cont_chekk_pas_string(char *str, int *cheker, int i)
 {
-     while (str[i])
-    {
-        if (str[i] == ' ')
-            i++;
-        else if (str[i] == '+' || str[i] == '-' )
-        {
-            if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
-                return (NULL);
-            i++;
-        }
-        else if (str[i] >= '0' && str[i] <= '9')
-             {
-                *cheker =1; 
-                i++;
-             }
-        else
-            return (NULL);
-    }
-     if (*cheker==0)
-         return (NULL);
-    return (str);
+	while (str[i])
+	{
+		if (str[i] == ' ')
+			i++;
+		else if (str[i] == '+' || str[i] == '-')
+		{
+			if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
+				return (NULL);
+			i++;
+		}
+		else if (str[i] >= '0' && str[i] <= '9')
+		{
+			*cheker = 1;
+			i++;
+		}
+		else
+			return (NULL);
+	}
+	if (*cheker == 0)
+		return (NULL);
+	return (str);
 }
-char * chekk_pas_string(char *str)
+char	*chekk_pas_string(char *str)
 {
-    int i;
-    int cheker;
-    char *p;
-    
-    cheker=0;
-    p=NULL;
-    i = 0;
-    
-    if (str == NULL)
-        return (NULL);
-    p = cont_chekk_pas_string(str,&cheker,i);
-    return p;
-}
+	int		i;
+	int		cheker;
+	char	*p;
 
+	cheker = 0;
+	p = NULL;
+	i = 0;
+	if (str == NULL)
+		return (NULL);
+	p = cont_chekk_pas_string(str, &cheker, i);
+	return (p);
+}
 
 long	ft_atoi(const char *nptr)
 {
@@ -90,10 +87,10 @@ size_t	ft_strlenn(char **s)
 }
 char	*ft_strjoinn(char const *s1, char const *s2)
 {
-	char	*str;
-	size_t	total_len;
-	size_t	i;
-	size_t	j;
+	char *str;
+	size_t total_len;
+	size_t i;
+	size_t j;
 
 	if (!s1 && !s2)
 		return (NULL);
@@ -110,7 +107,7 @@ char	*ft_strjoinn(char const *s1, char const *s2)
 	while (s1[i])
 		str[j++] = s1[i++];
 	i = 0;
-    str[j++] = ' ';
+	str[j++] = ' ';
 	while (s2[i])
 		str[j++] = s2[i++];
 	str[j] = '\0';
