@@ -3,6 +3,7 @@
         "chrono": "c",
         "random": "c",
         "limits": "c",
-        "variant": "c"
+        "variant": "c",
+        "cheker.h": "c"
     }
 }

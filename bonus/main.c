@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 01:45:56 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 06:19:34 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/17 22:35:36 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,40 +74,58 @@ void	ft_valid(t_stack *stack_a, t_stack *stack_b)
 	else
 		write(1, "KO\n", 3);
 }
-
-void *test(t_var *var,int max_number , int	*stok_maxxx)
+void	affiche_list(t_stack *contor)
 {
-    int i;
-    char	*moovm;
-    int		max[max_number];
-    
-    i=0;
-    while (i < max_number)
+	if (contor == NULL)
+		return ;
+	while (contor != NULL)
+	{
+		printf("%d \n", contor->value);
+		contor = contor->next;
+	}
+}
+void	add_to_stack(t_var *var, int max_number, int *stok_maxxx)
+{
+	int	i;
+	int	max[max_number];
+
+	i = 0;
+	while (i < max_number)
 	{
 		add_to_stak(&var->head_stack_a, stok_maxxx[i]);
 		max[i] = stok_maxxx[i];
-        i++;
+		i++;
 	}
+}
+void	*test(t_var *var, int max_number, int *stok_maxxx, char *data)
+{
+	char	*moovm;
+
+	add_to_stack(var, max_number, stok_maxxx);
 	moovm = get_next_line(0);
 	while (moovm)
 	{
-		if (implimnt_cmd(moovm, &var->head_stack_a, &var->head_stack_b,var) == 0)
+		if (implimnt_cmd(moovm, &var->head_stack_a, &var->head_stack_b,
+				var) == 0)
 		{
 			write(2, "Error\n", 6);
-            free(moovm);
-			return (NULL);
+			free(moovm);
+			free_list(var->head_stack_a);
+			free(data);
+			free(stok_maxxx);
+			exit(0);
 		}
 		free(moovm);
 		moovm = get_next_line(0);
 	}
 }
+
 int	main(int ac, char **av)
 {
 	int		i;
 	t_var	var;
 	char	*data;
 	int		*stok_maxxx;
-
 	int		max_number;
 
 	var.head_stack_a = NULL;
@@ -119,13 +137,13 @@ int	main(int ac, char **av)
 		return (1);
 	i = 0;
 	stok_maxxx = conerty_data_integer(data, &max_number, i);
-	if (chek_double(stok_maxxx, max_number) == 1 || sort_number(stok_maxxx,max_number) == 1)
+	if (chek_double(stok_maxxx, max_number) == 1)
 		return (free(stok_maxxx), free(data), 0);
-
-    test(&var,max_number,stok_maxxx);
+	test(&var, max_number, stok_maxxx, data);
 	ft_valid(var.head_stack_a, var.head_stack_b);
-    
 	free_list(var.head_stack_a);
+	if (var.head_stack_b)
+		free_list(var.head_stack_b);
 	free(data);
 	free(stok_maxxx);
 }
