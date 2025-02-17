@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fonction.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmed <ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 02:45:00 by ahmed             #+#    #+#             */
-/*   Updated: 2025/02/16 02:50:52 by ahmed            ###   ########.fr       */
+/*   Updated: 2025/02/16 22:29:00 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int sort_number(int *stok_maxxx, int size)
 {
     int i = 0;
 
-    while (i < size -1) 
+    while (i < size-1) 
     {
         if (stok_maxxx[i] > stok_maxxx[i + 1]) 
             return (0); 
@@ -72,10 +72,10 @@ void add_to_array(int max[],int max_number)
         }
 }
 
-void add_les_index(int max[],int max_number,t_var var)
+void add_les_index(int max[],int max_number,t_var *var)
 {
     t_stack *p;
-    p = var.head_stack_a;
+    p = var->head_stack_a;
     int i;
     
     while(p)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   head.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmed <ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 21:07:07 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/16 02:41:46 by ahmed            ###   ########.fr       */
+/*   Updated: 2025/02/16 22:14:24 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include<stdio.h>
 
 typedef struct s_stack
 {
@@ -56,7 +57,7 @@ int *conerty_data_integer(char *data, int *number, int i);
 int chek_double(int *maxxx, int max_number);
 int sort_number(int *stok_maxxx, int size);
 void add_to_array(int max[], int max_number);
-void add_les_index(int max[], int max_number, t_var var);
+void add_les_index(int max[], int max_number, t_var *var);
 int position(t_stack *temp, int value);
 void Push_stack_algo(t_var *var, int range);
 int trouve_ground_number(t_stack *stack);
@@ -76,5 +77,9 @@ void swap(t_stack **heed, char flag);
 void ss(t_var *swapp);
 
 int find_index(t_stack *a, int x, int p);
+
+void implementation(t_var *var, int max_number, int *stok_maxxx);
+void contuni_implementation(t_var *var);
+
 
 #endif

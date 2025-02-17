@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 21:19:03 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/16 00:11:47 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/16 21:37:52 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	affiche_list(t_stack *contor)
 		return ;
 	while (contor != NULL)
 	{
-		//  printf("%d \n",contor->value);
+		  printf("%d \n",contor->value);
 		contor = contor->next;
 	}
 }

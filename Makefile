@@ -1,31 +1,55 @@
-NAME = push_swapA
+NAME = push_swap
+BONUS = checker
 
 CC = cc
-CFLAGS =  -Wall -Werror -Wextra
+# CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3
 
-SRC = add_stack.c lesregles.c libft.c main.c split.c\
-	algo_cinquieme.c algo_quatre.c algo_troi.c algo.c\
-	chek_number.c fonction.c parsine.c
-OBJ = ${SRC:.c=.o}
+PUSH_SRC = ./mandatory/add_stack.c \
+ 			./mandatory/lesregles.c \
+			./mandatory/libft.c \
+			./mandatory/main.c \
+			./mandatory/split.c \
+			./mandatory/algo_cinquieme.c \
+			./mandatory/algo_quatre.c \
+			./mandatory/algo_troi.c \
+			./mandatory/algo.c \
+			./mandatory/chek_number.c \
+			./mandatory/fonction.c \
+			./mandatory/parsine.c 
 
-all: ${NAME}
+BONUS_SRC = ./bonus/main.c  \
+			./bonus/get_next_line.c \
+			./bonus/get_next_line_utils.c\
+			./bonus/fonction.c\
+			./bonus/split.c \
+			./bonus/parsine_bonus.c\
+			./bonus/add_stack.c \
+			./bonus/les_regles.c
+			
 
-${NAME}: ${OBJ}
-	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+PUSH_OBJ = $(PUSH_SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
+
+all: $(NAME)
+
+bonus: $(BONUS_OBJ)
+	$(CC) $(CFLAGS) $(BONUS_OBJ) -o $(BONUS)
+
+$(NAME): $(PUSH_OBJ)
+	$(CC) $(CFLAGS) $(PUSH_OBJ) -o $(NAME)
 
 %.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf ${OBJ}
+	rm -rf $(PUSH_OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	rm -rf ${NAME}
+	rm -rf $(NAME) $(BONUS)
 
 re: fclean all
 
-.PHONY: all clean fclean re
-
+.PHONY: all clean fclean re bonus
 
 
 

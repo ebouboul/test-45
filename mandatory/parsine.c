@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmed <ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 02:48:33 by ahmed             #+#    #+#             */
-/*   Updated: 2025/02/16 02:49:34 by ahmed            ###   ########.fr       */
+/*   Updated: 2025/02/17 03:37:21 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,9 @@ int	*conerty_data_integer(char *data, int *number, int i)
 		cheker = ft_atoi(split[i]);
 		if (size_number > 11 || cheker > 2147483647 || cheker < -2147483648)
 		{
-			write(1, "Eroor!\n", 7);
+			write(2, "Eroor!\n", 7);
+            free(maxxx);
+            free(data);
 			ft_free(split);
 			exit(0);
 		}
@@ -122,7 +124,7 @@ int chek_double(int *maxxx ,int max_number)
         {
             if(maxxx[i] == maxxx[j])
             {
-                write(1,"Eroor!\n",7);
+                write(2,"Eroor!\n",7);
                return (1);
             }
             j++;
