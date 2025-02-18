@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lesregles.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 21:22:00 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/18 04:59:30 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 05:40:52 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,27 +71,17 @@ void	ra_and_rb(t_stack **head, char flag)
 	else if (flag == 'b')
 		write(1, "rb\n", 3);
 }
-
 void	rr_ra_rb_meme_temp(t_var *head)
 {
-	if (head->head_stack_a == NULL || head->head_stack_b == NULL)
-		return ;
-	else
-	{
+	
 		ra_and_rb(&head->head_stack_a, 's');
 		ra_and_rb(&head->head_stack_b, 's');
-		write(1, "rr\n", 3);
-	}
+
 }
 
 void	rrr_rra_rrb_meme_temp(t_var *head)
 {
-	if (head->head_stack_a == NULL || head->head_stack_b == NULL)
-		return ;
-	else
-	{
-		rra_rrb(&head->head_stack_a, 's');
-		rra_rrb(&head->head_stack_b, 's');
-		write(1, "rrr\n", 4);
-	}
+
+	rra_rrb(&head->head_stack_a, 's');
+	rra_rrb(&head->head_stack_b, 's');
 }

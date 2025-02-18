@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 04:10:58 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/18 04:52:12 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 05:38:51 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,10 @@ void	swap(t_stack **heed, char flag)
 
 void	ss(t_var *swapp)
 {
-	if (swapp->head_stack_a == NULL || swapp->head_stack_b == NULL)
-		return ;
-	else
-	{
+
 		swap(&swapp->head_stack_a, 's');
 		swap(&swapp->head_stack_b, 's');
 		write(1, "ss\n", 3);
-	}
 }
 
 int	size_list(t_stack *heed)
