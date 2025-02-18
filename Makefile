@@ -1,7 +1,7 @@
-NAME = push_swapA
+NAME = push_swap
 BONUS = checker
 
-CC = cc -g3
+CC = cc
  CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
 
 PUSH_SRC = ./mandatory/add_stack.c \
@@ -24,7 +24,9 @@ BONUS_SRC = ./bonus/main.c  \
 			./bonus/split.c \
 			./bonus/parsine_bonus.c\
 			./bonus/add_stack.c \
-			./bonus/les_regles.c
+			./bonus/les_regles.c\
+			./bonus/fonction2.c\
+			
 			
 
 PUSH_OBJ = $(PUSH_SRC:.c=.o)

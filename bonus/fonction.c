@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:09:18 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/18 00:11:42 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 05:27:41 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,16 @@ char	*strjondata(int ac, char **av)
 	}
 	return (data);
 }
-void contuni_conerty_data_integer(int number,int i,int*maxxx,char **split,char *data)
+
+void	contuni_conerty_data_integer(int number, int *maxxx, char **split,
+		char *data)
 {
-    long	cheker;
-    int size_number;
-    while (i < number)
+	int		i;
+	long	cheker;
+	int		size_number;
+
+	i = 0;
+	while (i < number)
 	{
 		size_number = ft_strlen(split[i]);
 		cheker = ft_atoi(split[i]);
@@ -54,24 +59,24 @@ void contuni_conerty_data_integer(int number,int i,int*maxxx,char **split,char *
 			free(maxxx);
 			free(data);
 			ft_free(split);
-			exit(0);
+			exit(1);
 		}
 		maxxx[i] = cheker;
 		i++;
-	}  
+	}
 }
-int	*conerty_data_integer(char *data, int *number, int i)
+
+int	*conerty_data_integer(char *data, int *number)
 {
 	char	**split;
 	int		*maxxx;
-
 
 	split = ft_split(data, ' ');
 	*number = ft_strlenn(split);
 	maxxx = malloc((*number) * sizeof(int));
 	if (!maxxx)
-		exit(0);
-    contuni_conerty_data_integer(*number,i,maxxx,split,data);
+		exit(1);
+	contuni_conerty_data_integer(*number, maxxx, split, data);
 	ft_free(split);
 	return (maxxx);
 }
@@ -111,16 +116,4 @@ int	sort_number(int *stok_maxxx, int size)
 		i++;
 	}
 	return (1);
-}
-
-void	free_list(t_stack *str)
-{
-	t_stack *temp;
-
-	while (str != NULL)
-	{
-		temp = str;
-		str = str->next;
-		free(temp);
-	}
 }

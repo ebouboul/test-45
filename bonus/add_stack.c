@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 04:10:58 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 23:54:55 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 04:52:12 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	ss(t_var *swapp)
 		write(1, "ss\n", 3);
 	}
 }
+
 int	size_list(t_stack *heed)
 {
 	t_stack	*head;
@@ -83,11 +84,12 @@ int	size_list(t_stack *heed)
 
 void	rra_rrb(t_stack **head, char flag)
 {
-	t_stack *con;
-	t_stack *temp;
+	t_stack	*con;
+	t_stack	*temp;
+	int		size;
+
 	con = *head;
 	temp = *head;
-	int size;
 	size = size_list(*head);
 	if (*head == NULL || size < 2)
 		return ;

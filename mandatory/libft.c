@@ -6,11 +6,11 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 21:27:15 by alamiri           #+#    #+#             */
-/*   Updated: 2025/01/30 01:42:40 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 05:01:17 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"head.h"
+#include "head.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -66,12 +66,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s1[i])
 		str[j++] = s1[i++];
 	i = 0;
-    str[j++] = ' ';
+	str[j++] = ' ';
 	while (s2[i])
 		str[j++] = s2[i++];
 	str[j] = '\0';
 	return (str);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

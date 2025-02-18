@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:21:28 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 22:43:30 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 04:44:09 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	p[i] = '\0';
 	return (p);
 }
+
 char	**copieword(char **p, const char *s, char c)
 {
-	int(i), (l), (t);
+	int (i), (l), (t);
 	i = 0;
 	t = 0;
 	while (s && s[i])
@@ -97,6 +98,7 @@ char	**copieword(char **p, const char *s, char c)
 	}
 	return (p);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**p;

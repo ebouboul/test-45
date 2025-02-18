@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 02:23:05 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 22:43:23 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 04:43:42 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	*cont_chekk_pas_string(char *str, int *cheker, int i)
 		return (NULL);
 	return (str);
 }
+
 char	*chekk_pas_string(char *str)
 {
 	int		i;
@@ -85,12 +86,13 @@ size_t	ft_strlenn(char **s)
 		i++;
 	return (i);
 }
+
 char	*ft_strjoinn(char const *s1, char const *s2)
 {
-	char *str;
-	size_t total_len;
-	size_t i;
-	size_t j;
+	size_t	total_len;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
 	if (!s1 && !s2)
 		return (NULL);

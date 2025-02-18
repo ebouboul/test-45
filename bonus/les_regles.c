@@ -6,7 +6,7 @@
 /*   By: alamiri <alamiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 04:14:23 by alamiri           #+#    #+#             */
-/*   Updated: 2025/02/17 22:43:12 by alamiri          ###   ########.fr       */
+/*   Updated: 2025/02/18 04:47:37 by alamiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	add_front(t_stack **head, int value)
 	{
 		noud->next = *head;
 		*head = noud;
-		// free(noud);
 	}
 }
+
 void	push_a_push_b(t_stack **new, t_stack **to, char flag)
 {
 	t_stack	*noud;
